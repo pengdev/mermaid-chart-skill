@@ -7,7 +7,7 @@ A [Claude Code skill](https://docs.anthropic.com/en/docs/claude-code/skills) tha
 Clone or copy this skill into your Claude Code skills directory:
 
 ```bash
-git clone <repo-url> ~/.claude/skills/mermaid-chart
+git clone git@github.com:pengdev/mermaid-chart-skill.git ~/.claude/skills/mermaid-chart
 ```
 
 Or copy manually:

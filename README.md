@@ -1,6 +1,20 @@
 # Mermaid Chart Skill for Claude Code
 
-A [Claude Code skill](https://docs.anthropic.com/en/docs/claude-code/skills) that lets Claude design and render flow charts, architecture diagrams, and sequence diagrams as PNG images using [Mermaid](https://mermaid.js.org/).
+A [Claude Code skill](https://docs.anthropic.com/en/docs/claude-code/skills) that enables Claude to produce **more readable Mermaid diagrams** through a visual feedback loop.
+
+### The problem
+
+When Claude generates Mermaid markdown directly, it can't *see* the result — so overlapping nodes, cramped labels, or awkward layouts go unnoticed.
+
+### How this skill fixes it
+
+This skill closes the feedback loop: Claude renders the Mermaid definition to a **PNG**, reads the image back (Claude is multimodal), and **iterates** on the layout until the diagram actually looks good. The result is a polished `.mmd` file you can drop straight into your GitHub markdown, or you can ask Claude to open the PNG locally for a quick visual check.
+
+```
+Write .mmd → Render PNG → Read PNG → Refine → Repeat
+```
+
+In short: **Claude sees what you see**, so the diagrams come out right.
 
 ## Installation
 

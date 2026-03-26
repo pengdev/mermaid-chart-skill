@@ -15,8 +15,8 @@ Design a Mermaid diagram, write it to a `.mmd` file, and render it to PNG via th
 1. **Design** — choose the right diagram type for the content (see below)
 2. **Write** the `.mmd` file to `/tmp/mermaid-chart/<name>.mmd`
 3. **Render** to PNG using the render script
-4. **View** the output with the Read tool — Claude is multimodal and can inspect the image
-5. **Iterate** if layout or labels need adjustment
+4. **View** the output with the Read tool — you are multimodal and can inspect the rendered image
+5. **Iterate** — check for overlapping nodes, cramped labels, or awkward layout and refine until the diagram is clean and readable
 
 ## Tools
 

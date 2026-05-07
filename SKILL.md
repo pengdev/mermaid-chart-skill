@@ -17,6 +17,25 @@ Design a Mermaid diagram, write it to a `.mmd` file, and render it to PNG via th
 3. **Render** to PNG using the render script
 4. **View** the output with the Read tool — you are multimodal and can inspect the rendered image
 5. **Iterate** — check for overlapping nodes, cramped labels, or awkward layout and refine until the diagram is clean and readable
+6. **Embed** — see the Embedding section below; for markdown destinations, inline the source instead of committing the PNG
+
+## Embedding
+
+The `/tmp/mermaid-chart/` PNG is a throwaway visual check, not an artifact to commit. Pick the embedding mode by destination:
+
+- **Markdown rendered on GitHub / GitLab / similar** (READMEs, design docs, PR bodies, wikis): inline the diagram source as a fenced ```` ```mermaid ```` block directly in the `.md` file. Both platforms render mermaid natively. Do **not** commit the rendered PNG or the `.mmd` source — they go stale and duplicate the inline block.
+- **Non-markdown destinations** (slide decks, blog posts, static HTML, screenshots for tickets): use the rendered PNG. The `.mmd` source is still throwaway unless the target system expects to re-render.
+
+When inlining, copy the contents of the `.mmd` file (without the file's filename header) into the target `.md` like:
+
+````markdown
+```mermaid
+flowchart LR
+    A --> B
+```
+````
+
+Skip creating an `images/` directory in the repo unless an actual raster asset is needed.
 
 ## Tools
 
